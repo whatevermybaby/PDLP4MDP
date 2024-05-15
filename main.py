@@ -105,9 +105,9 @@ def main(args):
     
     
     if args.problem_type=='maze':
-        post_operate_data(pi,pi,results,f"PI_{args.problem_type}_{args.problem_size[0]*args.problem_size[1]*args.wall_ratio}_{4}_{args.discount}_{args.wall_ratio}",discount)
-        post_operate_data(vi,pi,results,f"VI_{args.problem_type}_{args.problem_size[0]*args.problem_size[1]*args.wall_ratio}_{4}_{args.discount}_{args.wall_ratio}",discount)
-        post_operate_data(pdlp,pi,results,f"PDLP_{args.problem_type}_{args.problem_size[0]*args.problem_size[1]*args.wall_ratio}_{4}_{args.discount}_{args.wall_ratio}",discount)
+        post_operate_data(pi,pi,results,f"PI_{args.problem_type}_{args.problem_size[0]*args.problem_size[1]*(1-args.wall_ratio)}_{4}_{args.discount}_{args.wall_ratio}",args.discount)
+        post_operate_data(vi,pi,results,f"VI_{args.problem_type}_{args.problem_size[0]*args.problem_size[1]*(1-args.wall_ratio)}_{4}_{args.discount}_{args.wall_ratio}",args.discount)
+        post_operate_data(pdlp,pi,results,f"PDLP_{args.problem_type}_{args.problem_size[0]*args.problem_size[1]*(1-args.wall_ratio)}_{4}_{args.discount}_{args.wall_ratio}",args.discount)
     else:
         post_operate_data(pi,pi,results,f"PI_{args.problem_type}_{args.problem_size[0]}_{args.problem_size[1]}_{args.discount}",discount)
         post_operate_data(vi,pi,results,f"VI_{args.problem_type}_{args.problem_size[0]}_{args.problem_size[1]}_{args.discount}",discount)
@@ -136,7 +136,7 @@ if __name__ == "__main__":
 
     # Add arguments
     parser.add_argument('--problem_type', type=str, default='forest', help='the type of problem')
-    parser.add_argument('--problem_size', type=parse_array, default=[1000,20], help='size of problem')
+    parser.add_argument('--problem_size', type=parse_array, default=[100,20], help='size of problem')
     parser.add_argument('--discount', type=float, default=0.99, help='discount of MDP')
     parser.add_argument('--eps', type=float, default=1e-6, help='solution accuracy')
     parser.add_argument('--wall_ratio', type=float, default=0.2, help='the ratio of wall in maze')
