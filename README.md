@@ -8,6 +8,6 @@
 
 ## Acknowledgments
 This code is heavily inspired by the following works:
-- [danijar's Dreamer-v3 jax implementation: https://github.com/danijar/dreamerv3](https://github.com/sawcordwell/pymdptoolbox)
-- [danijar's Dreamer-v2 tensorflow implementation: https://github.com/danijar/dreamerv2](https://github.com/osigaud/SimpleMazeMDP)
+- [pymdptoolbox](https://github.com/sawcordwell/pymdptoolbox)
+- [mazemdp](https://github.com/osigaud/SimpleMazeMDP)
 
