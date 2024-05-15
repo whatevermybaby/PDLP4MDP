@@ -6,7 +6,7 @@ import cvxpy as cp
 import argparse
 import datetime
 import sys
-import chardet
+# import chardet
 from mazemdp import create_random_maze
 # print(cp.installed_solvers())
 
